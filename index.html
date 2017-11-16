@@ -130,18 +130,33 @@
     </div>
     <div class="large-4 columns">
      <h5 style="font-weight: bold;color:green;">FILTERS</h5>
-    <p style="text-align: justify;">The following demonstrate use of filters</p>
+    <p style="text-align: justify;">The following demonstrate use of filters, It converts name of the city to uppercase!</p>
 
---------------
+        <script>
+            app.controller("king", function($scope) {
+                $scope.city = "Amsterdam";
+            });
+        </script>
+
+        <div ng-controller="king" style="font-weight: bold;font-size:20px;">
+            <input type="text" placeholde="City" ng-model="city"><br>
+            {{ city | uppercase}}
+        </div>
 
     </div>
 
     <div class="large-4 columns">
          <h5 style="font-weight: bold;color:green;">DIRECTIVES</h5>
-    <p style="text-align: justify;">The following shows the use of Directives</p>
+    <p style="text-align: justify;">The following shows the use of Directives. It uses directives
+    to multiply two numbers.</p>
 
+        <!-- Directives -->
+        <div data-ng-app="" data-ng-init="a=1;b=500">
+            <input type="number" ng-model="a">
+            <input type="number" ng-model="b">
+            <p>The Product is {{a * b}}</p>
+        </div>
 
-------------
 
     </div>
     </div>
