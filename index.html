@@ -1,0 +1,172 @@
+
+    <!DOCTYPE html>
+    <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+    <html class="no-js" lang="en">
+    <head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular JS</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css">
+        <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <link rel="icon" type="image/png" href="img/logo.png"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+
+    </head>
+
+
+
+
+
+    <body ng-app="joseph">
+    <div class="row">
+    <div class="large-3 columns">
+    <h1><img src="img/logo.svg" /></h1>
+    </div>
+    <div class="large-9 columns">
+    <ul class="right button-group">
+    <li><a href="#" class="button"><i class="fi-home"></i>&nbsp;HOME</a></li>
+    <li><a href="#" class="button"><i class="fi-book"></i>&nbsp;ABOUT US</a></li>
+    <li><a href="#" class="button"><i class="fi-pencil"></i>&nbsp;SERVICES</a></li>
+    <li><a href="#" class="button"><i class="fi-info"></i>&nbsp;CONTACT US</a></li>
+    </ul>
+    </div>
+    </div>
+
+
+    <div class="row">
+    <div class="large-12 columns">
+    <ul class="example-orbit" data-orbit>
+    <li><img src="img/1.jpg"></li>
+    <li><img src="img/2.jpg"></li>
+    <li><img src="img/3.jpg"></li>
+    </ul>
+    </div>
+    </div>
+
+
+    <div class="row">
+    <div class="large-4 columns">
+        <h5 style="font-weight: bold;color:green;">BASIC PROGRAM</h5>
+    <p style="text-align: justify;">Basic Angular Introduction - Type to see results</p>
+
+
+        <form name="cytonn" action="#"
+    onsubmit="return validate()" method="post">
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="row collapse">
+            <div class="small-12 columns">
+              <input type="text" placeholder="Name of City" ng-model="city">
+            </div>
+              <p>Hello {{city}}</p>
+          </div>
+        </div>
+      </div>
+    </form> 
+    </div>
+    <div class="large-4 columns">
+         <h5 style="font-weight: bold;color:green;">MODULES & CONTROLLERS</h5>
+    <p style="text-align: justify;">Example on Modules, the following is displayed using modules and controllers</p>
+
+        <script>
+            var app = angular.module("joseph", []);
+            app.controller("king", function($scope) {
+                $scope.first = "Cytonn";
+                $scope.last = "Technologies";
+            });
+        </script>
+
+        <div ng-app="joseph" ng-controller="king" style="font-weight: bold;font-size:20px;">
+            <input type="text" ng-model="first"><br>
+            <input type="text" ng-model="last"><br>
+            {{ first + " " + last }}
+        </div>
+
+
+    </div>
+    <div class="large-4 columns">
+     <h5 style="font-weight: bold;color:green;">MODELS</h5>
+    <p style="text-align: justify;">The following uses models to validate the form input below</p>
+
+        <form ng-app="joseph" name="login">
+            <input placeholder="Email Address" type="email" name="emails" ng-model="text">
+            <span style="background-color: red;padding: 7px;color:#ffffff;border-radius: 3px;" ng-show="login.emails.$error.email">Email Address is Invalid!</span>
+        </form>
+    </div>
+    </div>
+   
+    <div class="row">
+         <hr/>
+    <div class="large-4 columns">
+         <h5 style="font-weight: bold;color:green;">SERVICES</h5>
+    <p style="text-align: justify;">The following service uses $timeout service to display text after 5 seconds</p>
+
+        <script>
+            app.controller('serve', function($scope, $timeout) {
+                $scope.origin = "How are u today at Cytonn?";
+                $timeout(function () {
+                    $scope.origin = "Cytonn Investments is good!";
+                }, 5000);
+                $timeout(function () {
+                    $scope.origin = "Ill be out for lunch at Westlands";
+                }, 10000);
+                $timeout(function () {
+                    $scope.origin = "Am In Nairobi for two weeks!";
+                }, 15000);
+                $timeout(function () {
+                    $scope.origin = "I think we shall meet that time!!";
+                }, 20000);
+            });
+        </script>
+
+        <div ng-controller="serve">
+            <h6 style="font-weight: bold;color: blue;">{{origin}}</h6>
+        </div>
+
+    </div>
+    <div class="large-4 columns">
+     <h5 style="font-weight: bold;color:green;">FILTERS</h5>
+    <p style="text-align: justify;">The following demonstrate use of filters</p>
+
+--------------
+
+    </div>
+
+    <div class="large-4 columns">
+         <h5 style="font-weight: bold;color:green;">DIRECTIVES</h5>
+    <p style="text-align: justify;">The following shows the use of Directives</p>
+
+
+------------
+
+    </div>
+    </div>
+    <footer class="row">
+    <div class="large-12 columns">
+    <hr />
+    <div class="row">
+    <div class="large-6 columns">
+    <p>&copy; Copyright Cytonn 2017</p>
+    </div>
+    <div class="large-6 columns">
+    <ul class="inline-list right">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact Us</a></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
+    <script>
+          $(document).foundation();
+        </script>
+    </body>
+    </html>
